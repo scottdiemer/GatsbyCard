@@ -1,66 +1,22 @@
 import React from "react"
 import styled from "styled-components"
+import YAMLData from "../data/cards.yml"
 
 const Cards = () => {
   return (
     <div className="centered">
       <StyledCards className="cards">
-        <article className="card">
-          <img
-            src="https://images.unsplash.com/photo-1553284966-19b8815c7817?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="horses"
-          />
-          <div className="card-body">
-            <h5 className="card-title">Horse Feed &amp; Supplies</h5>
-            <p className="card-text">
-              Elit numquam inventore incidunt ex dolore cum adipisci. Porro
-              sapiente maiores voluptatem aliquam alias Ducimus aut dicta illum
-              molestiae corporis.
-            </p>
-          </div>
-        </article>
-        <article className="card">
-          <img
-            src="https://images.unsplash.com/photo-1553284966-19b8815c7817?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="horses"
-          />
-          <div className="card-body">
-            <h5 className="card-title">Horse Feed &amp; Supplies</h5>
-            <p className="card-text">
-              Elit numquam inventore incidunt ex dolore cum adipisci. Porro
-              sapiente maiores voluptatem aliquam alias Ducimus aut dicta illum
-              molestiae corporis.
-            </p>
-          </div>
-        </article>
-        <article className="card">
-          <img
-            src="https://images.unsplash.com/photo-1553284966-19b8815c7817?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="horses"
-          />
-          <div className="card-body">
-            <h5 className="card-title">Horse Feed &amp; Supplies</h5>
-            <p className="card-text">
-              Elit numquam inventore incidunt ex dolore cum adipisci. Porro
-              sapiente maiores voluptatem aliquam alias Ducimus aut dicta illum
-              molestiae corporis.
-            </p>
-          </div>
-        </article>
-        <article className="card">
-          <img
-            src="https://images.unsplash.com/photo-1553284966-19b8815c7817?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="horses"
-          />
-          <div className="card-body">
-            <h5 className="card-title">Horse Feed &amp; Supplies</h5>
-            <p className="card-text">
-              Elit numquam inventore incidunt ex dolore cum adipisci. Porro
-              sapiente maiores voluptatem aliquam alias Ducimus aut dicta illum
-              molestiae corporis.
-            </p>
-          </div>
-        </article>
+        {YAMLData.map((card, index) => {
+          return (
+            <article className="card">
+              <img src={card.imageUrl} alt={card.title} />
+              <div className="card-body">
+                <h5 className="card-title">{card.title}</h5>
+                <p className="card-text">{card.text}</p>
+              </div>
+            </article>
+          )
+        })}
       </StyledCards>
     </div>
   )
