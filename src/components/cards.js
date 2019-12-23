@@ -8,7 +8,7 @@ const Cards = () => {
       <StyledCards className="cards">
         {YAMLData.map((card, index) => {
           return (
-            <article className="card">
+            <article key={card.id} className="card">
               <img src={card.imageUrl} alt={card.title} />
               <div className="card-body">
                 <h5 className="card-title">{card.title}</h5>
