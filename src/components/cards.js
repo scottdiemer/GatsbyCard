@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import MyImg from "../components/myimg"
 import YAMLData from "../data/cards.yml"
 
 const Cards = () => {
@@ -9,7 +10,7 @@ const Cards = () => {
         {YAMLData.map((card, index) => {
           return (
             <article key={index} className="card">
-              <img src={card.imageUrl} alt={card.title} />
+              <MyImg src={card.image} />
               <div className="card-body">
                 <h5 className="card-title">{card.title}</h5>
                 <p className="card-text">{card.text}</p>
